@@ -1,38 +1,45 @@
+// Importando o necessario para fazer as rotas entre as paginas
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
-import Home from './pages/Home';
-import Sobre from './pages/Sobre';
-import React, { useState } from 'react';
 
-import { Container,Button,lightTheme,darkTheme, DivCenter } from './Estilos/Estilo';
+//Importando as minhas Paginas
+import Home from "./Paginas/Home";
+import Contato from "./Paginas/Contato";
+import Sobre from "./Paginas/Sobre";
+import Tema from "./Paginas/Tema" ;
+import {theme, Content, PageContainer} from './Estilos/Estilos'
 import { ThemeProvider } from 'styled-components';
-import Cep from './Pages/cep';
-import Contato from './pages/contato';
+import React,{useState} from 'react'
+import Footer from './Componentes/Footer';
 
-function App() {
-  const [theme,setTheme]= useState('light')
-  const mudarTheme = () => {
-      setTheme(mudar => mudar === 'light'? 'dark' : 'light')
-  }
+function App(){
+  const [currentTheme, setCurrentTheme] = useState('light');
+  const toggleTheme = () => {
+    setCurrentTheme(currentTheme === 'light' ? 'dark' : 'light');
+  };
   return (
-    <> 
-    <ThemeProvider theme={theme ==='light' ? lightTheme : darkTheme}>
-     <DivCenter><h1>A floresta em perigo</h1></DivCenter>
+    <>
+     <ThemeProvider theme={theme[currentTheme]}>
+<PageContainer>
 
-    <DivCenter><Button onClick={mudarTheme}>BOTÃO</Button></DivCenter>
-    <hr/>
-    <Container>
-                  <BrowserRouter>
-                    <Routes>
-                          <Route path='/' element={<Home />} />
-                          <Route path='/sobre' element={<Sobre />} />
-                          <Route path='/contato' element={<Contato/>} />
-                          <Route path='/cep' element={<Cep />} />
-                    </Routes>
-                  </BrowserRouter>
-    </Container>
-    </ThemeProvider>
+    <Content >
+
+    {/* Criando a minha rota entre as pagdinas */}
+       <BrowserRouter>
+            <Routes>
+            
+              <Route path="/" element={<Home></Home>}></Route>
+              <Route path="/Contato" element={<Contato></Contato>}></Route>
+              <Route path="/Sobre" element={<Sobre></Sobre>}></Route>
+              <Route path="/Tema" element={<Tema></Tema>}></Route>
+            </Routes>
+        </BrowserRouter> 
+        </Content>
+        <Footer toggleTheme={toggleTheme} currentTheme={currentTheme} />
+            
+        </PageContainer>
+        </ThemeProvider>
     </>
-  );
+  )
 }
 
-export default App;
+export default App
