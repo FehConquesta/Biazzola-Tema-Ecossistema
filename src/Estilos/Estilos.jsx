@@ -42,7 +42,7 @@ export const Titulo = styled.h1`
 `
 
 export const BotaoCep = styled.button`
-    background-color:#008080;
+    background-color:green;
     border: none;
     color: white;
     padding: 15px 32px;
@@ -92,6 +92,8 @@ export const Content = styled.div`
 background-color: ${(props) => props.theme.background};
 color: ${(props) => props.theme.text};  
     flex: 1; 
+    justify-content: center;
+    text-align: center;
 `
 export const theme = {
     light: {
@@ -111,6 +113,68 @@ export const ThemeToggleButton = styled.button`
   cursor: pointer;
   font-size: 24px;
   color: ${(props) => props.theme.text};
+`
+export const Foto = styled.div`
+  width: 200px; 
+  height: 200px; 
+  background-image: url('../foto.png'); 
+  background-size: cover;
+  background-position: center;
+  border: 3px solid green; 
+  border-radius: 50%;
+ 
+  
+`;
+
+export const CenteredDiv = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  
+`;
+
+export const LeftDiv = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: left;
+  width: 100%;
+  height: 100%;
+`;
+export const RightDiv = styled.div`
+  display: flex;
+  justify-content: right;
+  align-items: right;
+  width: 100%;
+  height: 100%;
+`;
+export const Imagem = styled.div`
+  width: 200px; 
+  height: 200px; 
+  background-image: url('../floresta.jpg'); 
+  background-size: cover;
+  background-position: center;
+  border: 3px solid green; 
+  justify-content: center;
+  align-items: center; 
+`;
+
+export const Container = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+`
+export const Armas = styled.div`
+  width: 500px; 
+  height: 200px; 
+  background-image: url('../armas.jpg'); 
+  background-size: cover;
+  background-position: center;
+  border: 3px solid green; 
+  border-radius: 50%;
+ 
+  
 `;
 
 
