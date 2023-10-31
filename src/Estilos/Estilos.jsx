@@ -168,7 +168,7 @@ export const Container = styled.div`
 export const Armas = styled.div`
   width: 500px; 
   height: 200px; 
-  background-image: url('../armas.jpg'); 
+  background-image: url('../arvore.jpg'); 
   background-size: cover;
   background-position: center;
   border: 3px solid green; 
