@@ -12,9 +12,9 @@ import React,{useState} from 'react'
 import Footer from './Componentes/Footer';
 
 function App(){
-  const [currentTheme, setCurrentTheme] = useState('light');
+  const [currentTheme, setCurrentTheme] = useState('dark');
   const toggleTheme = () => {
-    setCurrentTheme(currentTheme === 'light' ? 'dark' : 'light');
+    setCurrentTheme(currentTheme === 'dark' ? 'light' : 'dark');
   };
   return (
     <>
